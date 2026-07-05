@@ -1,0 +1,139 @@
+/* --- 基础页面全局样式 --- */
+:root {
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
+    --primary-glow: #00f2fe;
+    --secondary-glow: #4facfe;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* --- 特效一：渐变霓虹发光字 --- */
+.neon-text {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+    margin-bottom: 10px;
+}
+
+/* --- 特效二：打字机光标闪烁 --- */
+.typewriter-container {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: #8b949e;
+}
+.typewriter {
+    border-right: 2px solid var(--primary-glow);
+    white-space: nowrap;
+    animation: blink 0.75s step-end infinite;
+}
+
+/* --- 特效三：鼠标悬浮流动下划线 --- */
+.hover-link {
+    font-size: 1.1rem;
+    color: #58a6ff;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+    font-weight: 500;
+}
+.hover-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-glow);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.hover-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* --- 特效四：卡片悬浮缩放与发光 --- */
+.share-section {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .share-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-glow);
+    box-shadow: 0 10px 20px rgba(0, 242, 254, 0.15);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #f0f6fc;
+    font-size: 1.3rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #8b949e;
+    line-height: 1.5;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(56, 139, 253, 0.15);
+    color: #58a6ff;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+/* 动画关键帧 */
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary-glow); }
+}
