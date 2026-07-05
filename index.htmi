@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的酷炫分享空间</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="neon-text">✨ 欢迎来到我的分享空间</h1>
+        
+        <div class="typewriter-container">
+            <span class="typewriter" id="typewriter-text"></span>
+        </div>
+
+        <p style="margin-top: 30px;">
+            <a href="https://github.com" target="_blank" class="hover-link">👉 关注我的 GitHub 仓库</a>
+        </p>
+
+        <div class="share-section">
+            
+            <div class="card" onclick="alert('自定义跳转链接')">
+                <h3>实用工具推荐</h3>
+                <p>这里分享了我日常使用的高效率神器，包含各种开源软件和宝藏网站。</p>
+                <span class="tag"># 工具</span>
+            </div>
+
+            <div class="card" onclick="alert('自定义跳转链接')">
+                <h3>游戏魔改与 Mod</h3>
+                <p>收集并整理了一些热门游戏的魔改补丁、优化指南以及各种资源。</p>
+                <span class="tag"># 游戏</span>
+            </div>
+
+            <div class="card" onclick="alert('自定义跳转链接')">
+                <h3>酷炫前端动效</h3>
+                <p>纯 CSS 和 JS 实现的各种网页特效，后续会持续在这里更新代码。</p>
+                <span class="tag"># 代码</span>
+            </div>
+
+            <div class="card" onclick="alert('自定义跳转链接')">
+                <h3>随笔与杂谈</h3>
+                <p>偶尔记录一些生活随笔、技术踩坑记录或者是一些奇思妙想。</p>
+                <span class="tag"># 随笔</span>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
