@@ -1,55 +1,48 @@
 body {
     margin: 0;
+    padding: 0;
+    background: #050505;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.glass-container {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #0f172a; /* 深色底色更能衬托玻璃质感 */
-    overflow: hidden;
-    font-family: sans-serif;
+    backdrop-filter: blur(5px);
 }
 
-/* 液态流动背景动画 */
-.blob {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: linear-gradient(45deg, #ff00ff, #00d4ff);
-    filter: blur(100px); /* 模糊产生液态融合感 */
-    border-radius: 50%;
-    animation: move 10s infinite alternate;
-}
-
-@keyframes move {
-    from { transform: translate(-20%, -20%); }
-    to { transform: translate(20%, 20%); }
-}
-
-/* 玻璃容器样式 */
-.glass-card {
-    position: relative;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.1); /* 半透明 */
-    backdrop-filter: blur(20px);         /* 核心：磨砂玻璃效果 */
-    -webkit-backdrop-filter: blur(20px);
+.glass-btn {
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    color: white;
-    text-align: center;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-}
-
-button {
-    margin-top: 20px;
-    padding: 10px 25px;
-    border-radius: 50px;
-    border: none;
-    background: rgba(255, 255, 255, 0.2);
+    padding: 15px 30px;
+    border-radius: 15px;
     color: white;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.4s;
+    backdrop-filter: blur(10px);
 }
 
-button:hover {
-    background: rgba(255, 255, 255, 0.4);
+.glass-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
 }
